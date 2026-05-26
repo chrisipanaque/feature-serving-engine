@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles /Users/christian/Documents/feature-serving-engine/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles /Users/christian/Documents/feature-serving-engine/build/core/queue//CMakeFiles/progress.marks
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/queue/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/queue/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,83 +103,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/queue/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/queue/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named core_events
-
-# Build rule for target.
-core_events: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_events
-.PHONY : core_events
-
-# fast build rule for target.
-core_events/fast:
-	$(MAKE) $(MAKESILENT) -f core/events/CMakeFiles/core_events.dir/build.make core/events/CMakeFiles/core_events.dir/build
-.PHONY : core_events/fast
-
-#=============================================================================
-# Target rules for targets named core_features
-
-# Build rule for target.
-core_features: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_features
-.PHONY : core_features
-
-# fast build rule for target.
-core_features/fast:
-	$(MAKE) $(MAKESILENT) -f core/features/CMakeFiles/core_features.dir/build.make core/features/CMakeFiles/core_features.dir/build
-.PHONY : core_features/fast
-
-#=============================================================================
-# Target rules for targets named core_store
-
-# Build rule for target.
-core_store: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_store
-.PHONY : core_store
-
-# fast build rule for target.
-core_store/fast:
-	$(MAKE) $(MAKESILENT) -f core/store/CMakeFiles/core_store.dir/build.make core/store/CMakeFiles/core_store.dir/build
-.PHONY : core_store/fast
-
-#=============================================================================
-# Target rules for targets named core_concurrency
-
-# Build rule for target.
-core_concurrency: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_concurrency
-.PHONY : core_concurrency
-
-# fast build rule for target.
-core_concurrency/fast:
-	$(MAKE) $(MAKESILENT) -f core/concurrency/CMakeFiles/core_concurrency.dir/build.make core/concurrency/CMakeFiles/core_concurrency.dir/build
-.PHONY : core_concurrency/fast
-
-#=============================================================================
-# Target rules for targets named feature-serving-engine
-
-# Build rule for target.
-feature-serving-engine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 feature-serving-engine
-.PHONY : feature-serving-engine
-
-# fast build rule for target.
-feature-serving-engine/fast:
-	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/feature-serving-engine.dir/build.make cli/CMakeFiles/feature-serving-engine.dir/build
-.PHONY : feature-serving-engine/fast
 
 # Help Target
 help:
@@ -189,11 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... core_concurrency"
-	@echo "... core_events"
-	@echo "... core_features"
-	@echo "... core_store"
-	@echo "... feature-serving-engine"
 .PHONY : help
 
 
@@ -205,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -5,6 +5,8 @@
 		"/Users/christian/Documents/feature-serving-engine/build/core/events/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/core/features/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/core/store/cmake_install.cmake",
+		"/Users/christian/Documents/feature-serving-engine/build/core/queue/cmake_install.cmake",
+		"/Users/christian/Documents/feature-serving-engine/build/core/concurrency/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/cli/cmake_install.cmake"
 	],
 	"Parallel" : false

@@ -34,3 +34,28 @@ Constraints:
 - deterministic event processing
 - must compile and run immediately
 ```
+
+## Prompt 2
+```
+Extend the Real-Time Feature Serving Engine.
+
+Add:
+- producer thread for synthetic event generation
+- thread-safe event queue
+- consumer thread for feature aggregation
+
+Requirements:
+- use mutex + condition_variable
+- support graceful shutdown
+- preserve deterministic feature updates
+
+Add metrics:
+- events processed per second
+- queue size
+
+Create:
+- core/concurrency/
+- core/queue/
+
+Do not remove existing feature computation logic.
+```
