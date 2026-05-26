@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-Server::Server(const FeatureStore& store, short port)
-    : store_(store)
+Server::Server(const InferenceService& service, short port)
+    : service_(service)
     , port_(port)
     , acceptor_(io_context_,
                 asio::ip::tcp::endpoint(asio::ip::tcp::v4(), port))
@@ -25,8 +25,8 @@ void Server::start() {
             if (!running_ || ec)
                 break;
 
-            std::thread([sock = std::move(socket), &store = store_]() mutable {
-                Session(std::move(sock), store).run();
+            std::thread([sock = std::move(socket), &svc = service_]() mutable {
+                Session(std::move(sock), svc).run();
             }).detach();
         }
     });

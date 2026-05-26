@@ -9,23 +9,23 @@
 #include <thread>
 #include <vector>
 
-#include "core/store/feature_store.hpp"
+#include "core/inference/inference_service.hpp"
 
 class Server {
 public:
-    Server(const FeatureStore& store, short port);
+    Server(const InferenceService& service, short port);
     ~Server();
 
     void start();
     void stop();
 
 private:
-    const FeatureStore&    store_;
-    short                  port_;
-    asio::io_context       io_context_;
-    asio::ip::tcp::acceptor acceptor_;
-    std::atomic<bool>      running_{false};
-    std::thread            thread_;
+    const InferenceService&  service_;
+    short                    port_;
+    asio::io_context         io_context_;
+    asio::ip::tcp::acceptor  acceptor_;
+    std::atomic<bool>        running_{false};
+    std::thread              thread_;
 };
 
 #endif

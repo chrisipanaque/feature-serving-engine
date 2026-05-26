@@ -13,6 +13,15 @@ struct Response {
              + " purchases=" + std::to_string(fv.purchases);
     }
 
+    static std::string prediction(uint64_t user_id, double score,
+                                  const FeatureVector& fv) {
+        return "user_id=" + std::to_string(user_id)
+             + " score=" + std::to_string(score)
+             + " views=" + std::to_string(fv.views)
+             + " clicks=" + std::to_string(fv.clicks)
+             + " purchases=" + std::to_string(fv.purchases);
+    }
+
     static std::string not_found(uint64_t user_id) {
         return "ERROR user " + std::to_string(user_id) + " not found";
     }

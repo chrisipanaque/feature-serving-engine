@@ -10,6 +10,7 @@
 		"/Users/christian/Documents/feature-serving-engine/build/core/retrieval/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/core/persistence/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/core/network/cmake_install.cmake",
+		"/Users/christian/Documents/feature-serving-engine/build/core/inference/cmake_install.cmake",
 		"/Users/christian/Documents/feature-serving-engine/build/cli/cmake_install.cmake"
 	],
 	"Parallel" : false

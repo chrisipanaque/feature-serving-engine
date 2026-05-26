@@ -1404,10 +1404,12 @@ core/network/CMakeFiles/core_network.dir/server.cpp.o: \
   /Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include/asio/writable_pipe.hpp \
   /Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include/asio/write_at.hpp \
   /Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include/asio/impl/write_at.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/network/../../core/inference/inference_service.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/network/../../core/features/feature_vector.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/network/../../core/events/event.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/network/../../core/inference/scorer.hpp \
   /Users/christian/Documents/feature-serving-engine/core/network/../../core/store/feature_store.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex \
-  /Users/christian/Documents/feature-serving-engine/core/network/../../core/events/event.hpp \
-  /Users/christian/Documents/feature-serving-engine/core/network/../../core/features/feature_vector.hpp \
   /Users/christian/Documents/feature-serving-engine/core/network/session.hpp \
   /Users/christian/Documents/feature-serving-engine/core/network/../../core/network/request.hpp \
   /Users/christian/Documents/feature-serving-engine/core/network/../../core/network/response.hpp \

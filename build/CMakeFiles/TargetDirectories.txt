@@ -23,6 +23,9 @@
 /Users/christian/Documents/feature-serving-engine/build/core/network/CMakeFiles/core_network.dir
 /Users/christian/Documents/feature-serving-engine/build/core/network/CMakeFiles/edit_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/core/network/CMakeFiles/rebuild_cache.dir
+/Users/christian/Documents/feature-serving-engine/build/core/inference/CMakeFiles/core_inference.dir
+/Users/christian/Documents/feature-serving-engine/build/core/inference/CMakeFiles/edit_cache.dir
+/Users/christian/Documents/feature-serving-engine/build/core/inference/CMakeFiles/rebuild_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/feature-serving-engine.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/edit_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/rebuild_cache.dir

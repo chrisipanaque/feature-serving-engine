@@ -7,5 +7,6 @@ target_link_libraries(feature-serving-engine PRIVATE
     core_retrieval
     core_persistence
     core_network
+    core_inference
     Threads::Threads
 )

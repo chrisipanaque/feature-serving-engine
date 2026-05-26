@@ -103,3 +103,57 @@ Constraints:
 - stdlib only
 - deterministic replay behavior
 ```
+
+## Prompt 5
+
+```
+Extend the system into a networked feature serving service.
+
+Requirements:
+- add TCP server
+- support feature retrieval requests:
+  GET_FEATURES <user_id>
+
+Responses should return:
+- views
+- clicks
+- purchases
+
+Add:
+- request parsing
+- response serialization
+- concurrent client handling
+
+Create:
+- core/network/
+
+Use standalone ASIO.
+
+Do not modify the aggregation engine architecture.
+```
+
+## Prompt 6
+```
+Extend the Real-Time Feature Serving Engine with an inference service.
+
+Requirements:
+- retrieve feature vectors
+- compute recommendation score
+- expose inference requests
+
+Inference pipeline:
+user_id
+→ retrieve features
+→ compute score
+→ return prediction
+
+Add metrics:
+- inference latency
+- throughput
+
+Create:
+- core/inference/
+
+Keep scoring deterministic and lightweight.
+Do not use external ML frameworks.
+```

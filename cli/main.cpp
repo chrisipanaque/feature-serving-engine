@@ -8,6 +8,8 @@
 #include "core/concurrency/consumer.hpp"
 #include "core/concurrency/producer.hpp"
 #include "core/events/generator.hpp"
+#include "core/inference/inference_service.hpp"
+#include "core/inference/scorer.hpp"
 #include "core/network/server.hpp"
 #include "core/persistence/event_log.hpp"
 #include "core/queue/thread_safe_queue.hpp"
@@ -26,6 +28,16 @@ static void run_benchmark(FeatureStore& store, uint64_t num_users) {
     std::cout << "P99 latency:     " << stats.p99_us << " us\n";
 }
 
+static void run_inference_benchmark(const InferenceService& service, uint64_t num_users) {
+    std::cout << "\n--- Inference Benchmark ---\n";
+    InferenceStats stats = service.run_benchmark(10000, 4, num_users);
+    std::cout << "Requests: 10000, Threads: 4\n";
+    std::cout << "Average latency: " << stats.avg_latency_us << " us\n";
+    std::cout << "P50 latency:     " << stats.p50_latency_us << " us\n";
+    std::cout << "P99 latency:     " << stats.p99_latency_us << " us\n";
+    std::cout << "Throughput:      " << stats.throughput_ev_s << " ev/s\n";
+}
+
 static void run_replay(const std::string& path) {
     constexpr uint64_t NUM_USERS = 50;
 
@@ -40,10 +52,14 @@ static void run_replay(const std::string& path) {
         ++count;
     }
 
+    Scorer scorer;
+    InferenceService service(store, scorer);
+
     std::cout << "Replayed " << count << " events from " << path << "\n";
     std::cout << "\n--- Feature State ---\n";
     store.print_all();
     run_benchmark(store, NUM_USERS);
+    run_inference_benchmark(service, NUM_USERS);
 }
 
 static void run_normal(short port) {
@@ -68,8 +84,12 @@ static void run_normal(short port) {
         // No existing log — start fresh
     }
 
+    // Inference service (shared across sessions)
+    Scorer scorer;
+    InferenceService service(store, scorer);
+
     // TCP server
-    Server server(store, port);
+    Server server(service, port);
     server.start();
 
     EventGenerator gen(42);
@@ -121,6 +141,7 @@ static void run_normal(short port) {
     std::cout << "\n--- Final Feature State ---\n";
     store.print_all();
     run_benchmark(store, NUM_USERS);
+    run_inference_benchmark(service, NUM_USERS);
 }
 
 int main(int argc, char* argv[]) {

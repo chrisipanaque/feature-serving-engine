@@ -976,6 +976,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/inference/inference_service.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/inference/scorer.hpp \
   /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/network/server.hpp \
   /Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include/asio.hpp \
   /Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include/asio/any_completion_executor.hpp \

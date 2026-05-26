@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-Session::Session(asio::ip::tcp::socket socket, const FeatureStore& store)
+Session::Session(asio::ip::tcp::socket socket, const InferenceService& service)
     : socket_(std::move(socket))
-    , store_(store)
+    , service_(service)
 {}
 
 void Session::run() {
@@ -27,10 +27,18 @@ void Session::run() {
             Request req = Request::parse(line);
             std::string resp;
 
-            if (req.type == Request::GetFeatures) {
-                auto fv = store_.get_features(req.user_id);
+            if (req.type == Request::Predict) {
+                auto pred = service_.predict(req.user_id);
+                if (pred) {
+                    resp = Response::prediction(pred->user_id, pred->score,
+                                                pred->features);
+                } else {
+                    resp = Response::not_found(req.user_id);
+                }
+            } else if (req.type == Request::GetFeatures) {
+                auto fv = service_.predict(req.user_id);
                 if (fv)
-                    resp = Response::success(req.user_id, *fv);
+                    resp = Response::success(req.user_id, fv->features);
                 else
                     resp = Response::not_found(req.user_id);
             } else {

@@ -208,6 +208,19 @@ core_network/fast:
 .PHONY : core_network/fast
 
 #=============================================================================
+# Target rules for targets named core_inference
+
+# Build rule for target.
+core_inference: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_inference
+.PHONY : core_inference
+
+# fast build rule for target.
+core_inference/fast:
+	$(MAKE) $(MAKESILENT) -f core/inference/CMakeFiles/core_inference.dir/build.make core/inference/CMakeFiles/core_inference.dir/build
+.PHONY : core_inference/fast
+
+#=============================================================================
 # Target rules for targets named feature-serving-engine
 
 # Build rule for target.
@@ -231,6 +244,7 @@ help:
 	@echo "... core_concurrency"
 	@echo "... core_events"
 	@echo "... core_features"
+	@echo "... core_inference"
 	@echo "... core_network"
 	@echo "... core_persistence"
 	@echo "... core_retrieval"
