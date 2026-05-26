@@ -5,12 +5,14 @@
 #include <chrono>
 #include <thread>
 
+#include "core/persistence/event_log.hpp"
 #include "core/queue/thread_safe_queue.hpp"
 #include "core/store/feature_store.hpp"
 
 class Consumer {
 public:
-    Consumer(ThreadSafeQueue<Event>& queue, FeatureStore& store);
+    Consumer(ThreadSafeQueue<Event>& queue, FeatureStore& store,
+             EventLogWriter* writer = nullptr);
 
     void start();
     void stop();
@@ -22,6 +24,7 @@ private:
 
     ThreadSafeQueue<Event>&  queue_;
     FeatureStore&            store_;
+    EventLogWriter*          writer_;
     std::thread              thread_;
     std::atomic<bool>        running_{false};
     std::atomic<uint64_t>    consumed_{0};

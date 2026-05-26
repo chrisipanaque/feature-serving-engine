@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_persistence.a CMakeFiles/core_persistence.dir/event_log.cpp.o
+/usr/bin/ranlib libcore_persistence.a

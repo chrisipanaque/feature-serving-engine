@@ -82,3 +82,24 @@ Create:
 Do not introduce networking yet.
 Keep retrieval local/in-process.
 ```
+
+## Prompt 4
+```
+Extend the system with persistence and replay support.
+
+Requirements:
+- persist all incoming events to disk
+- append-only event log format
+- support replaying logs to rebuild feature state
+
+Add:
+- replay mode CLI option
+- startup reconstruction path
+
+Create:
+- core/persistence/
+
+Constraints:
+- stdlib only
+- deterministic replay behavior
+```

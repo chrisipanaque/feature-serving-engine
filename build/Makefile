@@ -182,6 +182,19 @@ core_retrieval/fast:
 .PHONY : core_retrieval/fast
 
 #=============================================================================
+# Target rules for targets named core_persistence
+
+# Build rule for target.
+core_persistence: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_persistence
+.PHONY : core_persistence
+
+# fast build rule for target.
+core_persistence/fast:
+	$(MAKE) $(MAKESILENT) -f core/persistence/CMakeFiles/core_persistence.dir/build.make core/persistence/CMakeFiles/core_persistence.dir/build
+.PHONY : core_persistence/fast
+
+#=============================================================================
 # Target rules for targets named feature-serving-engine
 
 # Build rule for target.
@@ -205,6 +218,7 @@ help:
 	@echo "... core_concurrency"
 	@echo "... core_events"
 	@echo "... core_features"
+	@echo "... core_persistence"
 	@echo "... core_retrieval"
 	@echo "... core_store"
 	@echo "... feature-serving-engine"

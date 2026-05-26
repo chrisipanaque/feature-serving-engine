@@ -815,6 +815,7 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
@@ -975,10 +976,16 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
   /Users/christian/Documents/feature-serving-engine/core/events/generator.hpp \
   /Users/christian/Documents/feature-serving-engine/core/features/feature_vector.hpp \
   /Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/retrieval/feature_retriever.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/retrieval/latency_stats.hpp \
   /Users/christian/Documents/feature-serving-engine/core/store/feature_store.hpp
 
 
 /Users/christian/Documents/feature-serving-engine/core/store/feature_store.hpp:
+
+/Users/christian/Documents/feature-serving-engine/core/retrieval/latency_stats.hpp:
+
+/Users/christian/Documents/feature-serving-engine/core/retrieval/feature_retriever.hpp:
 
 /Users/christian/Documents/feature-serving-engine/core/events/generator.hpp:
 
@@ -1843,6 +1850,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/replace_if.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/ostream.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_destructible.h:
 

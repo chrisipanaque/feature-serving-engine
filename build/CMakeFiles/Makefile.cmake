@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/christian/Documents/feature-serving-engine/core/concurrency/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/events/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/features/CMakeLists.txt"
+  "/Users/christian/Documents/feature-serving-engine/core/persistence/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/queue/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/retrieval/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/store/CMakeLists.txt"
@@ -57,6 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "core/queue/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/concurrency/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/retrieval/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "core/persistence/CMakeFiles/CMakeDirectoryInformation.cmake"
   "cli/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -67,5 +69,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "core/store/CMakeFiles/core_store.dir/DependInfo.cmake"
   "core/concurrency/CMakeFiles/core_concurrency.dir/DependInfo.cmake"
   "core/retrieval/CMakeFiles/core_retrieval.dir/DependInfo.cmake"
+  "core/persistence/CMakeFiles/core_persistence.dir/DependInfo.cmake"
   "cli/CMakeFiles/feature-serving-engine.dir/DependInfo.cmake"
   )

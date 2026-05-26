@@ -1,27 +1,80 @@
 #include <chrono>
+#include <cstring>
 #include <iostream>
+#include <string>
 #include <thread>
+#include <vector>
 
 #include "core/concurrency/consumer.hpp"
 #include "core/concurrency/producer.hpp"
 #include "core/events/generator.hpp"
+#include "core/persistence/event_log.hpp"
 #include "core/queue/thread_safe_queue.hpp"
 #include "core/retrieval/feature_retriever.hpp"
 #include "core/store/feature_store.hpp"
 
-int main() {
+static constexpr const char* DEFAULT_LOG = "events.log";
+
+static void run_benchmark(FeatureStore& store, uint64_t num_users) {
+    std::cout << "\n--- Retrieval Benchmark ---\n";
+    FeatureRetriever retriever(store);
+    LatencyStats stats = retriever.run_benchmark(10000, 4, num_users);
+    std::cout << "Requests: 10000, Threads: 4\n";
+    std::cout << "Average latency: " << stats.avg_us << " us\n";
+    std::cout << "P50 latency:     " << stats.p50_us << " us\n";
+    std::cout << "P99 latency:     " << stats.p99_us << " us\n";
+}
+
+static void run_replay(const std::string& path) {
+    constexpr uint64_t NUM_USERS = 50;
+
+    std::cout << "--- Replay Mode ---\n";
+    FeatureStore store;
+    EventLogReader reader(path);
+    uint64_t count = 0;
+
+    Event ev;
+    while (reader.read_next(ev)) {
+        store.ingest(ev);
+        ++count;
+    }
+
+    std::cout << "Replayed " << count << " events from " << path << "\n";
+    std::cout << "\n--- Feature State ---\n";
+    store.print_all();
+    run_benchmark(store, NUM_USERS);
+}
+
+static void run_normal() {
     constexpr uint64_t NUM_USERS      = 50;
     constexpr int      PRINT_INTERVAL = 3;
     constexpr int      RUN_DURATION   = 15;
+
+    // Startup reconstruction
+    FeatureStore store;
+    try {
+        EventLogReader reader(DEFAULT_LOG);
+        uint64_t reconstructed = 0;
+        Event ev;
+        while (reader.read_next(ev)) {
+            store.ingest(ev);
+            ++reconstructed;
+        }
+        if (reconstructed > 0)
+            std::cout << "Reconstructed " << reconstructed
+                      << " events from " << DEFAULT_LOG << "\n";
+    } catch (...) {
+        // No existing log — start fresh
+    }
 
     EventGenerator gen(42);
     gen.set_user_count(NUM_USERS);
 
     ThreadSafeQueue<Event> queue;
-    FeatureStore           store;
+    EventLogWriter writer(DEFAULT_LOG);
 
     Producer producer(gen, queue);
-    Consumer consumer(queue, store);
+    Consumer consumer(queue, store, &writer);
 
     producer.start();
     consumer.start();
@@ -55,18 +108,23 @@ int main() {
 
     std::cout << "Final: produced=" << final_produced
               << " consumed=" << final_consumed
-              << " (lost=" << (final_produced - final_consumed) << ")\n";
+              << " (lost=" << (final_produced - final_consumed) << ")\n"
+              << "Persisted: " << writer.count() << " events to "
+              << DEFAULT_LOG << "\n";
 
     std::cout << "\n--- Final Feature State ---\n";
     store.print_all();
+    run_benchmark(store, NUM_USERS);
+}
 
-    std::cout << "\n--- Retrieval Benchmark ---\n";
-    FeatureRetriever retriever(store);
-    LatencyStats stats = retriever.run_benchmark(10000, 4, NUM_USERS);
-    std::cout << "Requests: 10000, Threads: 4\n";
-    std::cout << "Average latency: " << stats.avg_us << " us\n";
-    std::cout << "P50 latency:     " << stats.p50_us << " us\n";
-    std::cout << "P99 latency:     " << stats.p99_us << " us\n";
-
+int main(int argc, char* argv[]) {
+    if (argc >= 3 && std::strcmp(argv[1], "--replay") == 0) {
+        run_replay(argv[2]);
+    } else if (argc >= 2 && std::strcmp(argv[1], "--replay") == 0) {
+        std::cerr << "Usage: " << argv[0] << " [--replay <logfile>]\n";
+        return 1;
+    } else {
+        run_normal();
+    }
     return 0;
 }

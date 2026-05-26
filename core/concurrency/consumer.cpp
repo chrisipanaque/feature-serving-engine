@@ -1,8 +1,10 @@
 #include "consumer.hpp"
 
-Consumer::Consumer(ThreadSafeQueue<Event>& queue, FeatureStore& store)
+Consumer::Consumer(ThreadSafeQueue<Event>& queue, FeatureStore& store,
+                   EventLogWriter* writer)
     : queue_(queue)
     , store_(store)
+    , writer_(writer)
 {}
 
 void Consumer::start() {
@@ -26,6 +28,8 @@ void Consumer::run() {
         Event ev;
         if (queue_.pop(ev)) {
             store_.ingest(ev);
+            if (writer_)
+                writer_->append(ev);
             ++consumed_;
         }
     }

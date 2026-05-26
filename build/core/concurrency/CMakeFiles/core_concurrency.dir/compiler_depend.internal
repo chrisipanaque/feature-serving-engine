@@ -768,6 +768,7 @@ core/concurrency/CMakeFiles/core_concurrency.dir/consumer.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -924,6 +925,7 @@ core/concurrency/CMakeFiles/core_concurrency.dir/consumer.cpp.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdint.h
  /Users/christian/Documents/feature-serving-engine/core/events/event.hpp
  /Users/christian/Documents/feature-serving-engine/core/features/feature_vector.hpp
+ /Users/christian/Documents/feature-serving-engine/core/persistence/event_log.hpp
  /Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp
  /Users/christian/Documents/feature-serving-engine/core/store/feature_store.hpp
  /Users/christian/Documents/feature-serving-engine/core/concurrency/consumer.hpp
