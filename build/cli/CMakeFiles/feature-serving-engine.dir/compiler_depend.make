@@ -969,9 +969,12 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdint.h \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/consumer.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/producer.hpp \
   /Users/christian/Documents/feature-serving-engine/core/events/event.hpp \
   /Users/christian/Documents/feature-serving-engine/core/events/generator.hpp \
   /Users/christian/Documents/feature-serving-engine/core/features/feature_vector.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp \
   /Users/christian/Documents/feature-serving-engine/core/store/feature_store.hpp
 
 
@@ -1233,6 +1236,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/move.h:
 
+/Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/integer_sequence.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h:
@@ -1464,6 +1469,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conjunction.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/has_virtual_destructor.h:
+
+/Users/christian/Documents/feature-serving-engine/core/concurrency/producer.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conditional.h:
 
@@ -2208,6 +2215,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_for_each.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__atomic/kill_dependency.h:
+
+/Users/christian/Documents/feature-serving-engine/core/concurrency/consumer.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/streambuf.h:
 

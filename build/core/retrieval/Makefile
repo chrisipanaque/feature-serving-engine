@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles /Users/christian/Documents/feature-serving-engine/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles /Users/christian/Documents/feature-serving-engine/build/core/retrieval//CMakeFiles/progress.marks
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/retrieval/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/retrieval/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,96 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/retrieval/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/retrieval/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named core_events
+# Convenience name for target.
+core/retrieval/CMakeFiles/core_retrieval.dir/rule:
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/retrieval/CMakeFiles/core_retrieval.dir/rule
+.PHONY : core/retrieval/CMakeFiles/core_retrieval.dir/rule
 
-# Build rule for target.
-core_events: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_events
-.PHONY : core_events
-
-# fast build rule for target.
-core_events/fast:
-	$(MAKE) $(MAKESILENT) -f core/events/CMakeFiles/core_events.dir/build.make core/events/CMakeFiles/core_events.dir/build
-.PHONY : core_events/fast
-
-#=============================================================================
-# Target rules for targets named core_features
-
-# Build rule for target.
-core_features: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_features
-.PHONY : core_features
-
-# fast build rule for target.
-core_features/fast:
-	$(MAKE) $(MAKESILENT) -f core/features/CMakeFiles/core_features.dir/build.make core/features/CMakeFiles/core_features.dir/build
-.PHONY : core_features/fast
-
-#=============================================================================
-# Target rules for targets named core_store
-
-# Build rule for target.
-core_store: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_store
-.PHONY : core_store
-
-# fast build rule for target.
-core_store/fast:
-	$(MAKE) $(MAKESILENT) -f core/store/CMakeFiles/core_store.dir/build.make core/store/CMakeFiles/core_store.dir/build
-.PHONY : core_store/fast
-
-#=============================================================================
-# Target rules for targets named core_concurrency
-
-# Build rule for target.
-core_concurrency: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_concurrency
-.PHONY : core_concurrency
-
-# fast build rule for target.
-core_concurrency/fast:
-	$(MAKE) $(MAKESILENT) -f core/concurrency/CMakeFiles/core_concurrency.dir/build.make core/concurrency/CMakeFiles/core_concurrency.dir/build
-.PHONY : core_concurrency/fast
-
-#=============================================================================
-# Target rules for targets named core_retrieval
-
-# Build rule for target.
-core_retrieval: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_retrieval
+# Convenience name for target.
+core_retrieval: core/retrieval/CMakeFiles/core_retrieval.dir/rule
 .PHONY : core_retrieval
 
 # fast build rule for target.
 core_retrieval/fast:
-	$(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/build
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/build
 .PHONY : core_retrieval/fast
 
-#=============================================================================
-# Target rules for targets named feature-serving-engine
+feature_retriever.o: feature_retriever.cpp.o
+.PHONY : feature_retriever.o
 
-# Build rule for target.
-feature-serving-engine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 feature-serving-engine
-.PHONY : feature-serving-engine
+# target to build an object file
+feature_retriever.cpp.o:
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/feature_retriever.cpp.o
+.PHONY : feature_retriever.cpp.o
 
-# fast build rule for target.
-feature-serving-engine/fast:
-	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/feature-serving-engine.dir/build.make cli/CMakeFiles/feature-serving-engine.dir/build
-.PHONY : feature-serving-engine/fast
+feature_retriever.i: feature_retriever.cpp.i
+.PHONY : feature_retriever.i
+
+# target to preprocess a source file
+feature_retriever.cpp.i:
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/feature_retriever.cpp.i
+.PHONY : feature_retriever.cpp.i
+
+feature_retriever.s: feature_retriever.cpp.s
+.PHONY : feature_retriever.s
+
+# target to generate assembly for a file
+feature_retriever.cpp.s:
+	cd /Users/christian/Documents/feature-serving-engine/build && $(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/feature_retriever.cpp.s
+.PHONY : feature_retriever.cpp.s
 
 # Help Target
 help:
@@ -202,12 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... core_concurrency"
-	@echo "... core_events"
-	@echo "... core_features"
 	@echo "... core_retrieval"
-	@echo "... core_store"
-	@echo "... feature-serving-engine"
+	@echo "... feature_retriever.o"
+	@echo "... feature_retriever.i"
+	@echo "... feature_retriever.s"
 .PHONY : help
 
 
@@ -219,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/christian/Documents/feature-serving-engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

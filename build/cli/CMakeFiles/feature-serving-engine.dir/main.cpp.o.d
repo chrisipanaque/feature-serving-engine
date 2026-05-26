@@ -923,6 +923,7 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/store/feature_store.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex \
   /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/events/event.hpp \
   /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/features/feature_vector.hpp \
   /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/concurrency/producer.hpp \
@@ -973,4 +974,6 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/subtract_with_carry_engine.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/retrieval/feature_retriever.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/concurrency/../../core/retrieval/latency_stats.hpp

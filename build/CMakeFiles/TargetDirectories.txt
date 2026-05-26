@@ -14,6 +14,9 @@
 /Users/christian/Documents/feature-serving-engine/build/core/concurrency/CMakeFiles/core_concurrency.dir
 /Users/christian/Documents/feature-serving-engine/build/core/concurrency/CMakeFiles/edit_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/core/concurrency/CMakeFiles/rebuild_cache.dir
+/Users/christian/Documents/feature-serving-engine/build/core/retrieval/CMakeFiles/core_retrieval.dir
+/Users/christian/Documents/feature-serving-engine/build/core/retrieval/CMakeFiles/edit_cache.dir
+/Users/christian/Documents/feature-serving-engine/build/core/retrieval/CMakeFiles/rebuild_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/feature-serving-engine.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/edit_cache.dir
 /Users/christian/Documents/feature-serving-engine/build/cli/CMakeFiles/rebuild_cache.dir

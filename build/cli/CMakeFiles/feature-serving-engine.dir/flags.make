@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/christian/Documents/feature-serving-engine/core/concurrency/../.. -I/Users/christian/Documents/feature-serving-engine/core/queue/../.. -I/Users/christian/Documents/feature-serving-engine/core/events/../.. -I/Users/christian/Documents/feature-serving-engine/core/store/../.. -I/Users/christian/Documents/feature-serving-engine/core/features/../..
+CXX_INCLUDES = -I/Users/christian/Documents/feature-serving-engine/core/concurrency/../.. -I/Users/christian/Documents/feature-serving-engine/core/queue/../.. -I/Users/christian/Documents/feature-serving-engine/core/events/../.. -I/Users/christian/Documents/feature-serving-engine/core/store/../.. -I/Users/christian/Documents/feature-serving-engine/core/features/../.. -I/Users/christian/Documents/feature-serving-engine/core/retrieval/../..
 
 CXX_FLAGSarm64 = -std=c++20 -arch arm64
 

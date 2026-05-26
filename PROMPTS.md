@@ -59,3 +59,26 @@ Create:
 
 Do not remove existing feature computation logic.
 ```
+
+## Prompt 3
+
+```
+Extend the system with a low-latency retrieval layer.
+
+Requirements:
+- add feature retrieval API:
+  get_features(user_id)
+- support concurrent reads
+- benchmark retrieval latency
+
+Output metrics:
+- average retrieval latency
+- p50 latency
+- p99 latency
+
+Create:
+- core/retrieval/
+
+Do not introduce networking yet.
+Keep retrieval local/in-process.
+```

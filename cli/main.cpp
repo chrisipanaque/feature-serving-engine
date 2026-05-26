@@ -6,6 +6,7 @@
 #include "core/concurrency/producer.hpp"
 #include "core/events/generator.hpp"
 #include "core/queue/thread_safe_queue.hpp"
+#include "core/retrieval/feature_retriever.hpp"
 #include "core/store/feature_store.hpp"
 
 int main() {
@@ -58,6 +59,14 @@ int main() {
 
     std::cout << "\n--- Final Feature State ---\n";
     store.print_all();
+
+    std::cout << "\n--- Retrieval Benchmark ---\n";
+    FeatureRetriever retriever(store);
+    LatencyStats stats = retriever.run_benchmark(10000, 4, NUM_USERS);
+    std::cout << "Requests: 10000, Threads: 4\n";
+    std::cout << "Average latency: " << stats.avg_us << " us\n";
+    std::cout << "P50 latency:     " << stats.p50_us << " us\n";
+    std::cout << "P99 latency:     " << stats.p99_us << " us\n";
 
     return 0;
 }
