@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_inference.a CMakeFiles/core_inference.dir/scorer.cpp.o CMakeFiles/core_inference.dir/inference_service.cpp.o
-/usr/bin/ranlib libcore_inference.a

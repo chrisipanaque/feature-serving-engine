@@ -14,18 +14,18 @@ cmake -B build
 cmake --build build
 
 # Default run (TCP :8080, batch size 32)
-./build/feature-serving-engine
+./build/bin/feature-serving-engine
 
 # Custom port and batch size
-./build/feature-serving-engine --port 9090 --batch 64
+./build/bin/feature-serving-engine --port 9090 --batch 64
 
 # Replay from persisted log
-./build/feature-serving-engine --replay events.log
+./build/bin/feature-serving-engine --replay events.log
 
 # Run benchmarks
-./build/benchmarks                       # throughput + latency
-./build/benchmarks --throughput          # events/sec only
-./build/benchmarks --latency             # retrieval + inference latency
+./build/bin/benchmarks                       # throughput + latency
+./build/bin/benchmarks --throughput          # events/sec only
+./build/bin/benchmarks --latency             # retrieval + inference latency
 ```
 
 ## Architecture

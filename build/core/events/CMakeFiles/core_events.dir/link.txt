@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_events.a CMakeFiles/core_events.dir/generator.cpp.o
-/usr/bin/ranlib libcore_events.a

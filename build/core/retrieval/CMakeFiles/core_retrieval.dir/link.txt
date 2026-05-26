@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_retrieval.a CMakeFiles/core_retrieval.dir/feature_retriever.cpp.o
-/usr/bin/ranlib libcore_retrieval.a

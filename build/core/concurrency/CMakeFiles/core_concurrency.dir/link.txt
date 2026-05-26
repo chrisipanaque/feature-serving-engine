@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_concurrency.a CMakeFiles/core_concurrency.dir/producer.cpp.o CMakeFiles/core_concurrency.dir/consumer.cpp.o
-/usr/bin/ranlib libcore_concurrency.a
