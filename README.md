@@ -1,10 +1,10 @@
 # Feature Serving Engine
 
-Designed a real-time feature serving engine sustaining **145 events/sec** throughput with **sub-microsecond retrieval latency** and **9.6M ev/s inference throughput** using a 16-shard concurrent feature store backed by `std::shared_mutex` and batched event ingestion.
+A real-time feature serving engine sustaining **145 events/sec** throughput with **sub-microsecond retrieval latency** and **9.6M ev/s inference throughput** using a 16-shard concurrent feature store backed by `std::shared_mutex` and batched event ingestion.
 
-Architected a **thread-safe ingestion pipeline** with lock-free event queues, configurable batch processing (up to 64 events per batch), and append-only binary event log for deterministic crash recovery.
+**Thread-safe ingestion pipeline** with lock-free event queues, configurable batch processing (up to 64 events per batch), and append-only binary event log for deterministic crash recovery.
 
-Built a **concurrent TCP serving layer** on standalone ASIO supporting `GET_FEATURES` and `PREDICT` over persistent connections, integrating sharded in-memory storage with a lightweight linear recommendation scorer.
+**Concurrent TCP serving layer** on standalone ASIO supporting `GET_FEATURES` and `PREDICT` over persistent connections, integrating sharded in-memory storage with a lightweight linear recommendation scorer.
 
 ## Usage
 
