@@ -221,6 +221,19 @@ core_inference/fast:
 .PHONY : core_inference/fast
 
 #=============================================================================
+# Target rules for targets named benchmarks
+
+# Build rule for target.
+benchmarks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmarks
+.PHONY : benchmarks
+
+# fast build rule for target.
+benchmarks/fast:
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/benchmarks.dir/build.make benchmarks/CMakeFiles/benchmarks.dir/build
+.PHONY : benchmarks/fast
+
+#=============================================================================
 # Target rules for targets named feature-serving-engine
 
 # Build rule for target.
@@ -241,6 +254,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... benchmarks"
 	@echo "... core_concurrency"
 	@echo "... core_events"
 	@echo "... core_features"

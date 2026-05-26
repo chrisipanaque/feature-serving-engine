@@ -62,7 +62,7 @@ static void run_replay(const std::string& path) {
     run_inference_benchmark(service, NUM_USERS);
 }
 
-static void run_normal(short port) {
+static void run_normal(short port, size_t batch_size) {
     constexpr uint64_t NUM_USERS      = 50;
     constexpr int      PRINT_INTERVAL = 3;
     constexpr int      RUN_DURATION   = 15;
@@ -101,6 +101,11 @@ static void run_normal(short port) {
     Producer producer(gen, queue);
     Consumer consumer(queue, store, &writer);
 
+    if (batch_size > 1) {
+        consumer.set_batch_size(batch_size);
+        std::cout << "Using batch_size=" << batch_size << "\n";
+    }
+
     producer.start();
     consumer.start();
 
@@ -121,7 +126,10 @@ static void run_normal(short port) {
         std::cout << "[Metrics] produced=" << produced
                   << " consumed=" << consumed
                   << " queue=" << queue_size
-                  << " rate=" << rate << " ev/s\n";
+                  << " rate=" << rate << " ev/s";
+        if (batch_size > 1)
+            std::cout << " batch=" << batch_size;
+        std::cout << "\n";
     }
 
     std::cout << "\n--- Shutting down ---\n";
@@ -145,18 +153,23 @@ static void run_normal(short port) {
 }
 
 int main(int argc, char* argv[]) {
-    short port = 8080;
+    short      port       = 8080;
+    size_t     batch_size = 32;
+    const char* replay_path = nullptr;
 
-    if (argc >= 3 && std::strcmp(argv[1], "--port") == 0) {
-        port = static_cast<short>(std::stoi(argv[2]));
-        run_normal(port);
-    } else if (argc >= 3 && std::strcmp(argv[1], "--replay") == 0) {
-        run_replay(argv[2]);
-    } else if (argc >= 2 && std::strcmp(argv[1], "--replay") == 0) {
-        std::cerr << "Usage: " << argv[0] << " [--port <n>] [--replay <logfile>]\n";
-        return 1;
+    for (int i = 1; i < argc; ++i) {
+        if (std::strcmp(argv[i], "--port") == 0 && i + 1 < argc)
+            port = static_cast<short>(std::stoi(argv[++i]));
+        else if (std::strcmp(argv[i], "--replay") == 0 && i + 1 < argc)
+            replay_path = argv[++i];
+        else if (std::strcmp(argv[i], "--batch") == 0 && i + 1 < argc)
+            batch_size = static_cast<size_t>(std::stoul(argv[++i]));
+    }
+
+    if (replay_path) {
+        run_replay(replay_path);
     } else {
-        run_normal(port);
+        run_normal(port, batch_size);
     }
     return 0;
 }

@@ -4,6 +4,7 @@
 #include <atomic>
 #include <chrono>
 #include <thread>
+#include <vector>
 
 #include "core/persistence/event_log.hpp"
 #include "core/queue/thread_safe_queue.hpp"
@@ -17,6 +18,8 @@ public:
     void start();
     void stop();
 
+    void set_batch_size(size_t n);
+
     uint64_t consumed_count() const;
 
 private:
@@ -28,6 +31,7 @@ private:
     std::thread              thread_;
     std::atomic<bool>        running_{false};
     std::atomic<uint64_t>    consumed_{0};
+    size_t                   batch_size_ = 1;
 };
 
 #endif

@@ -1462,6 +1462,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
   /Users/christian/Documents/feature-serving-engine/core/events/event.hpp \
   /Users/christian/Documents/feature-serving-engine/core/events/generator.hpp \
   /Users/christian/Documents/feature-serving-engine/core/features/feature_vector.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/inference/inference_service.hpp \
+  /Users/christian/Documents/feature-serving-engine/core/inference/scorer.hpp \
   /Users/christian/Documents/feature-serving-engine/core/network/server.hpp \
   /Users/christian/Documents/feature-serving-engine/core/persistence/event_log.hpp \
   /Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp \
@@ -1475,6 +1477,8 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o: /Users/christian/Documents
 /Users/christian/Documents/feature-serving-engine/core/retrieval/feature_retriever.hpp:
 
 /Users/christian/Documents/feature-serving-engine/core/persistence/event_log.hpp:
+
+/Users/christian/Documents/feature-serving-engine/core/inference/scorer.hpp:
 
 _deps/asio-src/asio/include/asio/write.hpp:
 
@@ -4221,6 +4225,8 @@ _deps/asio-src/asio/include/asio/static_thread_pool.hpp:
 _deps/asio-src/asio/include/asio/associated_allocator.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/view_interface.h:
+
+/Users/christian/Documents/feature-serving-engine/core/inference/inference_service.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_object.h:
 

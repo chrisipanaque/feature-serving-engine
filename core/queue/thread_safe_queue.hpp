@@ -5,6 +5,7 @@
 #include <condition_variable>
 #include <mutex>
 #include <queue>
+#include <vector>
 
 template <typename T>
 class ThreadSafeQueue {
@@ -36,6 +37,21 @@ public:
         item = std::move(queue_.front());
         queue_.pop();
         return true;
+    }
+
+    size_t pop_batch(std::vector<T>& out, size_t max_items) {
+        std::unique_lock<std::mutex> lock(mtx_);
+        cv_.wait(lock, [this] { return !queue_.empty() || stopped_; });
+        if (stopped_ && queue_.empty())
+            return 0;
+
+        size_t count = 0;
+        while (!queue_.empty() && count < max_items) {
+            out.push_back(std::move(queue_.front()));
+            queue_.pop();
+            ++count;
+        }
+        return count;
     }
 
     size_t size() const {

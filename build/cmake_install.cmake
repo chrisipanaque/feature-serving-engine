@@ -84,6 +84,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/christian/Documents/feature-serving-engine/build/core/profiling/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/christian/Documents/feature-serving-engine/build/benchmarks/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/christian/Documents/feature-serving-engine/build/cli/cmake_install.cmake")
 endif()
 

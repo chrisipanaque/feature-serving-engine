@@ -19,18 +19,36 @@ void Consumer::stop() {
         thread_.join();
 }
 
+void Consumer::set_batch_size(size_t n) {
+    batch_size_ = n;
+}
+
 uint64_t Consumer::consumed_count() const {
     return consumed_.load();
 }
 
 void Consumer::run() {
     while (running_) {
-        Event ev;
-        if (queue_.pop(ev)) {
-            store_.ingest(ev);
-            if (writer_)
-                writer_->append(ev);
-            ++consumed_;
+        if (batch_size_ <= 1) {
+            Event ev;
+            if (queue_.pop(ev)) {
+                store_.ingest(ev);
+                if (writer_)
+                    writer_->append(ev);
+                ++consumed_;
+            }
+        } else {
+            std::vector<Event> batch;
+            batch.reserve(batch_size_);
+            size_t n = queue_.pop_batch(batch, batch_size_);
+            if (n == 0)
+                continue;
+            store_.ingest_batch(batch);
+            if (writer_) {
+                for (const auto& ev : batch)
+                    writer_->append(ev);
+            }
+            consumed_ += n;
         }
     }
 }

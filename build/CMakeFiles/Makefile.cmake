@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/christian/Documents/feature-serving-engine/CMakeLists.txt"
+  "/Users/christian/Documents/feature-serving-engine/benchmarks/CMakeLists.txt"
   "CMakeFiles/4.3.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.3.2/CMakeSystem.cmake"
   "/Users/christian/Documents/feature-serving-engine/cli/CMakeLists.txt"
@@ -17,6 +18,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/christian/Documents/feature-serving-engine/core/inference/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/network/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/persistence/CMakeLists.txt"
+  "/Users/christian/Documents/feature-serving-engine/core/profiling/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/queue/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/retrieval/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/store/CMakeLists.txt"
@@ -141,6 +143,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "core/persistence/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/network/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/inference/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "core/profiling/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "benchmarks/CMakeFiles/CMakeDirectoryInformation.cmake"
   "cli/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -154,5 +158,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "core/persistence/CMakeFiles/core_persistence.dir/DependInfo.cmake"
   "core/network/CMakeFiles/core_network.dir/DependInfo.cmake"
   "core/inference/CMakeFiles/core_inference.dir/DependInfo.cmake"
+  "benchmarks/CMakeFiles/benchmarks.dir/DependInfo.cmake"
   "cli/CMakeFiles/feature-serving-engine.dir/DependInfo.cmake"
   )

@@ -157,3 +157,31 @@ Create:
 Keep scoring deterministic and lightweight.
 Do not use external ML frameworks.
 ```
+
+## Prompt 7
+
+```
+Optimize the Real-Time Feature Serving Engine for throughput and latency.
+
+Goals:
+- reduce lock contention
+- improve cache locality
+- increase event throughput
+- reduce retrieval latency
+
+Add:
+- sharded feature store
+- batched event processing
+- benchmark suite
+
+Output:
+- events/sec
+- retrieval latency
+- inference latency
+
+Create:
+- benchmarks/
+- profiling utilities
+
+Preserve existing architecture and APIs.
+```
