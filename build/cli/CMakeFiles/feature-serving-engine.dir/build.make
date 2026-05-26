@@ -98,6 +98,7 @@ cli/feature-serving-engine: cli/CMakeFiles/feature-serving-engine.dir/build.make
 cli/feature-serving-engine: core/concurrency/libcore_concurrency.a
 cli/feature-serving-engine: core/retrieval/libcore_retrieval.a
 cli/feature-serving-engine: core/persistence/libcore_persistence.a
+cli/feature-serving-engine: core/network/libcore_network.a
 cli/feature-serving-engine: core/store/libcore_store.a
 cli/feature-serving-engine: core/features/libcore_features.a
 cli/feature-serving-engine: core/events/libcore_events.a

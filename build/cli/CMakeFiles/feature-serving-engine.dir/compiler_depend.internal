@@ -976,6 +976,7 @@ cli/CMakeFiles/feature-serving-engine.dir/main.cpp.o
  /Users/christian/Documents/feature-serving-engine/core/events/event.hpp
  /Users/christian/Documents/feature-serving-engine/core/events/generator.hpp
  /Users/christian/Documents/feature-serving-engine/core/features/feature_vector.hpp
+ /Users/christian/Documents/feature-serving-engine/core/persistence/event_log.hpp
  /Users/christian/Documents/feature-serving-engine/core/queue/thread_safe_queue.hpp
  /Users/christian/Documents/feature-serving-engine/core/retrieval/feature_retriever.hpp
  /Users/christian/Documents/feature-serving-engine/core/retrieval/latency_stats.hpp

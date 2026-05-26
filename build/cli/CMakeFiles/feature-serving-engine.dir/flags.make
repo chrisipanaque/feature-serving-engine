@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/christian/Documents/feature-serving-engine/core/concurrency/../.. -I/Users/christian/Documents/feature-serving-engine/core/queue/../.. -I/Users/christian/Documents/feature-serving-engine/core/events/../.. -I/Users/christian/Documents/feature-serving-engine/core/store/../.. -I/Users/christian/Documents/feature-serving-engine/core/features/../.. -I/Users/christian/Documents/feature-serving-engine/core/retrieval/../.. -I/Users/christian/Documents/feature-serving-engine/core/persistence/../..
+CXX_INCLUDES = -I/Users/christian/Documents/feature-serving-engine/build/_deps/asio-src/asio/include -I/Users/christian/Documents/feature-serving-engine/core/concurrency/../.. -I/Users/christian/Documents/feature-serving-engine/core/queue/../.. -I/Users/christian/Documents/feature-serving-engine/core/events/../.. -I/Users/christian/Documents/feature-serving-engine/core/store/../.. -I/Users/christian/Documents/feature-serving-engine/core/features/../.. -I/Users/christian/Documents/feature-serving-engine/core/retrieval/../.. -I/Users/christian/Documents/feature-serving-engine/core/persistence/../.. -I/Users/christian/Documents/feature-serving-engine/core/network/../..
 
 CXX_FLAGSarm64 = -std=c++20 -arch arm64
 

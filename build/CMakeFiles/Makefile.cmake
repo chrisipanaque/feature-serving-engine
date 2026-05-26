@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/christian/Documents/feature-serving-engine/core/concurrency/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/events/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/features/CMakeLists.txt"
+  "/Users/christian/Documents/feature-serving-engine/core/network/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/persistence/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/queue/CMakeLists.txt"
   "/Users/christian/Documents/feature-serving-engine/core/retrieval/CMakeLists.txt"
@@ -25,12 +26,23 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckIncludeFileCXX.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+  "/opt/homebrew/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake"
+  "/opt/homebrew/share/cmake/Modules/FetchContent.cmake"
+  "/opt/homebrew/share/cmake/Modules/FetchContent/CMakeLists.cmake.in"
+  "/opt/homebrew/share/cmake/Modules/FindGit.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindThreads.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
@@ -51,6 +63,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "_deps/asio-subbuild/CMakeLists.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/events/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/features/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -59,6 +72,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "core/concurrency/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/retrieval/CMakeFiles/CMakeDirectoryInformation.cmake"
   "core/persistence/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "core/network/CMakeFiles/CMakeDirectoryInformation.cmake"
   "cli/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -70,5 +84,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "core/concurrency/CMakeFiles/core_concurrency.dir/DependInfo.cmake"
   "core/retrieval/CMakeFiles/core_retrieval.dir/DependInfo.cmake"
   "core/persistence/CMakeFiles/core_persistence.dir/DependInfo.cmake"
+  "core/network/CMakeFiles/core_network.dir/DependInfo.cmake"
   "cli/CMakeFiles/feature-serving-engine.dir/DependInfo.cmake"
   )

@@ -70,6 +70,7 @@ all: core/queue/all
 all: core/concurrency/all
 all: core/retrieval/all
 all: core/persistence/all
+all: core/network/all
 all: cli/all
 .PHONY : all
 
@@ -81,6 +82,7 @@ codegen: core/queue/codegen
 codegen: core/concurrency/codegen
 codegen: core/retrieval/codegen
 codegen: core/persistence/codegen
+codegen: core/network/codegen
 codegen: cli/codegen
 .PHONY : codegen
 
@@ -92,6 +94,7 @@ preinstall: core/queue/preinstall
 preinstall: core/concurrency/preinstall
 preinstall: core/retrieval/preinstall
 preinstall: core/persistence/preinstall
+preinstall: core/network/preinstall
 preinstall: cli/preinstall
 .PHONY : preinstall
 
@@ -103,6 +106,7 @@ clean: core/queue/clean
 clean: core/concurrency/clean
 clean: core/retrieval/clean
 clean: core/persistence/clean
+clean: core/network/clean
 clean: cli/clean
 .PHONY : clean
 
@@ -181,6 +185,25 @@ core/features/preinstall:
 # Recursive "clean" directory target.
 core/features/clean: core/features/CMakeFiles/core_features.dir/clean
 .PHONY : core/features/clean
+
+#=============================================================================
+# Directory level rules for directory core/network
+
+# Recursive "all" directory target.
+core/network/all: core/network/CMakeFiles/core_network.dir/all
+.PHONY : core/network/all
+
+# Recursive "codegen" directory target.
+core/network/codegen: core/network/CMakeFiles/core_network.dir/codegen
+.PHONY : core/network/codegen
+
+# Recursive "preinstall" directory target.
+core/network/preinstall:
+.PHONY : core/network/preinstall
+
+# Recursive "clean" directory target.
+core/network/clean: core/network/CMakeFiles/core_network.dir/clean
+.PHONY : core/network/clean
 
 #=============================================================================
 # Directory level rules for directory core/persistence
@@ -330,7 +353,7 @@ core/store/CMakeFiles/core_store.dir/all: core/events/CMakeFiles/core_events.dir
 core/store/CMakeFiles/core_store.dir/all: core/features/CMakeFiles/core_features.dir/all
 	$(MAKE) $(MAKESILENT) -f core/store/CMakeFiles/core_store.dir/build.make core/store/CMakeFiles/core_store.dir/depend
 	$(MAKE) $(MAKESILENT) -f core/store/CMakeFiles/core_store.dir/build.make core/store/CMakeFiles/core_store.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=12,13 "Built target core_store"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=15,16 "Built target core_store"
 .PHONY : core/store/CMakeFiles/core_store.dir/all
 
 # Build rule for subdir invocation for target.
@@ -347,7 +370,7 @@ core_store: core/store/CMakeFiles/core_store.dir/rule
 # codegen rule for target.
 core/store/CMakeFiles/core_store.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f core/store/CMakeFiles/core_store.dir/build.make core/store/CMakeFiles/core_store.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=12,13 "Finished codegen for target core_store"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=15,16 "Finished codegen for target core_store"
 .PHONY : core/store/CMakeFiles/core_store.dir/codegen
 
 # clean rule for target.
@@ -398,7 +421,7 @@ core/retrieval/CMakeFiles/core_retrieval.dir/all: core/features/CMakeFiles/core_
 core/retrieval/CMakeFiles/core_retrieval.dir/all: core/store/CMakeFiles/core_store.dir/all
 	$(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/depend
 	$(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=10,11 "Built target core_retrieval"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=13,14 "Built target core_retrieval"
 .PHONY : core/retrieval/CMakeFiles/core_retrieval.dir/all
 
 # Build rule for subdir invocation for target.
@@ -415,7 +438,7 @@ core_retrieval: core/retrieval/CMakeFiles/core_retrieval.dir/rule
 # codegen rule for target.
 core/retrieval/CMakeFiles/core_retrieval.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f core/retrieval/CMakeFiles/core_retrieval.dir/build.make core/retrieval/CMakeFiles/core_retrieval.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=10,11 "Finished codegen for target core_retrieval"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=13,14 "Finished codegen for target core_retrieval"
 .PHONY : core/retrieval/CMakeFiles/core_retrieval.dir/codegen
 
 # clean rule for target.
@@ -430,7 +453,7 @@ core/retrieval/CMakeFiles/core_retrieval.dir/clean:
 core/persistence/CMakeFiles/core_persistence.dir/all: core/events/CMakeFiles/core_events.dir/all
 	$(MAKE) $(MAKESILENT) -f core/persistence/CMakeFiles/core_persistence.dir/build.make core/persistence/CMakeFiles/core_persistence.dir/depend
 	$(MAKE) $(MAKESILENT) -f core/persistence/CMakeFiles/core_persistence.dir/build.make core/persistence/CMakeFiles/core_persistence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=8,9 "Built target core_persistence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=11,12 "Built target core_persistence"
 .PHONY : core/persistence/CMakeFiles/core_persistence.dir/all
 
 # Build rule for subdir invocation for target.
@@ -447,13 +470,47 @@ core_persistence: core/persistence/CMakeFiles/core_persistence.dir/rule
 # codegen rule for target.
 core/persistence/CMakeFiles/core_persistence.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f core/persistence/CMakeFiles/core_persistence.dir/build.make core/persistence/CMakeFiles/core_persistence.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=8,9 "Finished codegen for target core_persistence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=11,12 "Finished codegen for target core_persistence"
 .PHONY : core/persistence/CMakeFiles/core_persistence.dir/codegen
 
 # clean rule for target.
 core/persistence/CMakeFiles/core_persistence.dir/clean:
 	$(MAKE) $(MAKESILENT) -f core/persistence/CMakeFiles/core_persistence.dir/build.make core/persistence/CMakeFiles/core_persistence.dir/clean
 .PHONY : core/persistence/CMakeFiles/core_persistence.dir/clean
+
+#=============================================================================
+# Target rules for target core/network/CMakeFiles/core_network.dir
+
+# All Build rule for target.
+core/network/CMakeFiles/core_network.dir/all: core/events/CMakeFiles/core_events.dir/all
+core/network/CMakeFiles/core_network.dir/all: core/features/CMakeFiles/core_features.dir/all
+core/network/CMakeFiles/core_network.dir/all: core/store/CMakeFiles/core_store.dir/all
+	$(MAKE) $(MAKESILENT) -f core/network/CMakeFiles/core_network.dir/build.make core/network/CMakeFiles/core_network.dir/depend
+	$(MAKE) $(MAKESILENT) -f core/network/CMakeFiles/core_network.dir/build.make core/network/CMakeFiles/core_network.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=8,9,10 "Built target core_network"
+.PHONY : core/network/CMakeFiles/core_network.dir/all
+
+# Build rule for subdir invocation for target.
+core/network/CMakeFiles/core_network.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/network/CMakeFiles/core_network.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 0
+.PHONY : core/network/CMakeFiles/core_network.dir/rule
+
+# Convenience name for target.
+core_network: core/network/CMakeFiles/core_network.dir/rule
+.PHONY : core_network
+
+# codegen rule for target.
+core/network/CMakeFiles/core_network.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f core/network/CMakeFiles/core_network.dir/build.make core/network/CMakeFiles/core_network.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=8,9,10 "Finished codegen for target core_network"
+.PHONY : core/network/CMakeFiles/core_network.dir/codegen
+
+# clean rule for target.
+core/network/CMakeFiles/core_network.dir/clean:
+	$(MAKE) $(MAKESILENT) -f core/network/CMakeFiles/core_network.dir/build.make core/network/CMakeFiles/core_network.dir/clean
+.PHONY : core/network/CMakeFiles/core_network.dir/clean
 
 #=============================================================================
 # Target rules for target cli/CMakeFiles/feature-serving-engine.dir
@@ -465,14 +522,15 @@ cli/CMakeFiles/feature-serving-engine.dir/all: core/store/CMakeFiles/core_store.
 cli/CMakeFiles/feature-serving-engine.dir/all: core/concurrency/CMakeFiles/core_concurrency.dir/all
 cli/CMakeFiles/feature-serving-engine.dir/all: core/retrieval/CMakeFiles/core_retrieval.dir/all
 cli/CMakeFiles/feature-serving-engine.dir/all: core/persistence/CMakeFiles/core_persistence.dir/all
+cli/CMakeFiles/feature-serving-engine.dir/all: core/network/CMakeFiles/core_network.dir/all
 	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/feature-serving-engine.dir/build.make cli/CMakeFiles/feature-serving-engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/feature-serving-engine.dir/build.make cli/CMakeFiles/feature-serving-engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=14,15 "Built target feature-serving-engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=17,18 "Built target feature-serving-engine"
 .PHONY : cli/CMakeFiles/feature-serving-engine.dir/all
 
 # Build rule for subdir invocation for target.
 cli/CMakeFiles/feature-serving-engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cli/CMakeFiles/feature-serving-engine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/christian/Documents/feature-serving-engine/build/CMakeFiles 0
 .PHONY : cli/CMakeFiles/feature-serving-engine.dir/rule
@@ -484,7 +542,7 @@ feature-serving-engine: cli/CMakeFiles/feature-serving-engine.dir/rule
 # codegen rule for target.
 cli/CMakeFiles/feature-serving-engine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/feature-serving-engine.dir/build.make cli/CMakeFiles/feature-serving-engine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=14,15 "Finished codegen for target feature-serving-engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/christian/Documents/feature-serving-engine/build/CMakeFiles --progress-num=17,18 "Finished codegen for target feature-serving-engine"
 .PHONY : cli/CMakeFiles/feature-serving-engine.dir/codegen
 
 # clean rule for target.

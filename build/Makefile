@@ -195,6 +195,19 @@ core_persistence/fast:
 .PHONY : core_persistence/fast
 
 #=============================================================================
+# Target rules for targets named core_network
+
+# Build rule for target.
+core_network: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_network
+.PHONY : core_network
+
+# fast build rule for target.
+core_network/fast:
+	$(MAKE) $(MAKESILENT) -f core/network/CMakeFiles/core_network.dir/build.make core/network/CMakeFiles/core_network.dir/build
+.PHONY : core_network/fast
+
+#=============================================================================
 # Target rules for targets named feature-serving-engine
 
 # Build rule for target.
@@ -218,6 +231,7 @@ help:
 	@echo "... core_concurrency"
 	@echo "... core_events"
 	@echo "... core_features"
+	@echo "... core_network"
 	@echo "... core_persistence"
 	@echo "... core_retrieval"
 	@echo "... core_store"

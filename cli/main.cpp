@@ -8,6 +8,7 @@
 #include "core/concurrency/consumer.hpp"
 #include "core/concurrency/producer.hpp"
 #include "core/events/generator.hpp"
+#include "core/network/server.hpp"
 #include "core/persistence/event_log.hpp"
 #include "core/queue/thread_safe_queue.hpp"
 #include "core/retrieval/feature_retriever.hpp"
@@ -45,7 +46,7 @@ static void run_replay(const std::string& path) {
     run_benchmark(store, NUM_USERS);
 }
 
-static void run_normal() {
+static void run_normal(short port) {
     constexpr uint64_t NUM_USERS      = 50;
     constexpr int      PRINT_INTERVAL = 3;
     constexpr int      RUN_DURATION   = 15;
@@ -66,6 +67,10 @@ static void run_normal() {
     } catch (...) {
         // No existing log — start fresh
     }
+
+    // TCP server
+    Server server(store, port);
+    server.start();
 
     EventGenerator gen(42);
     gen.set_user_count(NUM_USERS);
@@ -100,6 +105,7 @@ static void run_normal() {
     }
 
     std::cout << "\n--- Shutting down ---\n";
+    server.stop();
     producer.stop();
     consumer.stop();
 
@@ -118,13 +124,18 @@ static void run_normal() {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc >= 3 && std::strcmp(argv[1], "--replay") == 0) {
+    short port = 8080;
+
+    if (argc >= 3 && std::strcmp(argv[1], "--port") == 0) {
+        port = static_cast<short>(std::stoi(argv[2]));
+        run_normal(port);
+    } else if (argc >= 3 && std::strcmp(argv[1], "--replay") == 0) {
         run_replay(argv[2]);
     } else if (argc >= 2 && std::strcmp(argv[1], "--replay") == 0) {
-        std::cerr << "Usage: " << argv[0] << " [--replay <logfile>]\n";
+        std::cerr << "Usage: " << argv[0] << " [--port <n>] [--replay <logfile>]\n";
         return 1;
     } else {
-        run_normal();
+        run_normal(port);
     }
     return 0;
 }
