@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_store.a CMakeFiles/core_store.dir/feature_store.cpp.o
+/usr/bin/ranlib libcore_store.a

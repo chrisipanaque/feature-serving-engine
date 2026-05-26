@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_features.a CMakeFiles/core_features.dir/feature_vector.cpp.o
+/usr/bin/ranlib libcore_features.a

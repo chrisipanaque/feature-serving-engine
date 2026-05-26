@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/zlib/lib "CMakeFiles/feature-serving-engine.dir/main.cpp.o" -o feature-serving-engine  ../core/store/libcore_store.a ../core/features/libcore_features.a ../core/events/libcore_events.a
